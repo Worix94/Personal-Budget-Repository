@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1628081430 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
+	<iostream>
+	"PersonalBudget.h"
+
+1303067212 source:c:\users\worix94\desktop\programy\personal budget\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1303067212 c:\users\worix94\desktop\programy\personal budget\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1628078455 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
+	"PersonalBudget.h"
+
+1627991220 source:c:\users\worix94\desktop\programy\personal budget\user.cpp
+	"User.h"
+
+1627991140 c:\users\worix94\desktop\programy\personal budget\user.h
+	<iostream>
+
+1628081012 source:c:\users\worix94\desktop\programy\personal budget\auxilarymethods.cpp
+	"AuxilaryMethods.h"
+
+1628081016 c:\users\worix94\desktop\programy\personal budget\auxilarymethods.h
+	<iostream>
+	<fstream>
+	<windows.h>
+	<vector>
+	<algorithm>
+	<sstream>
+
+1628080527 source:c:\users\worix94\desktop\programy\personal budget\usermanager.cpp
+	"UserManager.h"
+
+1628081778 source:c:\users\worix94\desktop\programy\personal budget\filewithusers.cpp
+	"FileWithUsers.h"
+
+1628081780 c:\users\worix94\desktop\programy\personal budget\filewithusers.h
+	<iostream>
+	<vector>
+	"AuxilaryMethods.h"
+	"Markup.h"
+	"User.h"
+
+1628081347 c:\users\worix94\desktop\programy\personal budget\usermanager.h
+	<iostream>
+	<vector>
+	"User.h"
+	"AuxilaryMethods.h"
+	"FileWithUsers.h"
+
+1628081418 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
+	<iostream>
+	"UserManager.h"
+
