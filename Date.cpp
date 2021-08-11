@@ -1,26 +1,26 @@
 #include "Date.h"
 
-int Date::getYear()
+int Datee::getYear()
 {
     return year;
 }
-    int Date::getMoth()
+    int Datee::getMoth()
     {
         return month;
     }
-    int Date::getDat()
+    int Datee::getDat()
     {
         return day;
     }
-    void Date::setYear(int newYear)
+    void Datee::setYear(int newYear)
     {
         year=newYear;
     }
-    void Date::setMonth(int newMonth)
+    void Datee::setMonth(int newMonth)
     {
         month=newMonth;
     }
-    void Date::setDay(int newDay)
+    void Datee::setDay(int newDay)
     {
         day=newDay;
     }

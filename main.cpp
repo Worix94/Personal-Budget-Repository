@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     char choice;
-    PersonalBudget personalBudget("users.xml");
+    PersonalBudget personalBudget("incomes.xml");
     while (true)
     {
     if(personalBudget.getLoggedUserId()==0){
@@ -25,7 +25,7 @@ int main()
                 exit(0);
                 break;
             default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                cout << endl << "No matching option in main menu." << endl << endl;
                 system("pause");
                 break;
             }
@@ -36,7 +36,7 @@ int main()
             switch (choice)
             {
             case '1':
-                //ksiazkaAdresowa.dodajAdresata();
+                personalBudget.addIncome();
                 break;
             case '2':
                 //wyszukajAdresatowPoImieniu(adresaci);

@@ -1,3 +1,7 @@
+#ifndef INCOME.H
+#define INCOME.H
+
+
 #include <iostream>
 
 #include "Date.h"
@@ -7,20 +11,22 @@ using namespace std;
 class Income{
 int incomeId;
 int userId;
-int date;
+string date;
 string item;
-double amount;
+int amount;
 
 public:
 
 int getIncomeId();
 int getUserId();
-int getDate();
+string getDate();
 string getItem();
-double getAmount();
+int getAmount();
 void setIncomeId(int newIncomeId);
 void setUserId(int newUserId);
-void setDate(int newDate);
+void setDate(string newDate);
 void setItem(string newItem);
 void setAmount(int newAmount);
 };
+
+#endif // INCOME

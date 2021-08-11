@@ -4,7 +4,7 @@
 void FileWIthUsers::loadingUsersFromFile(vector<User> &users)
 {
     User user;
-    bool FileExists = xml.Load( FILE_WITH_USERS_NAME );
+    bool FileExists = xml.Load( "users.xml" );
     xml.ResetPos();
     xml.FindElem("Users");
     xml.IntoElem();
@@ -26,7 +26,7 @@ void FileWIthUsers::writeUserToFile(User user)
 {
     int lastUserId=0;
     CMarkup xml;
-    bool FileExists = xml.Load( FILE_WITH_USERS_NAME );
+    bool FileExists = xml.Load( "users.xml" );
     if(!FileExists) {
         xml.AddElem("Users");
     }
@@ -48,6 +48,6 @@ void FileWIthUsers::writeUserToFile(User user)
     xml.AddElem("Password",user.getPassword());
     xml.AddElem("Name",user.getName());
     xml.AddElem("Surname",user.getSurname());
-    xml.Save(FILE_WITH_USERS_NAME);
+    xml.Save("users.xml");
 
 }

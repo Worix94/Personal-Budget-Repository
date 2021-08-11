@@ -1,8 +1,11 @@
+#ifndef DATEE.H
+#define DATEE.H
+
 #include <iostream>
 
 using namespace std;
 
-class Date{
+class Datee{
 int year,month,day;
 
 public:
@@ -15,3 +18,5 @@ public:
     void setMonth(int newMonth);
     void setDay(int newDay);
 };
+
+#endif

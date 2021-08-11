@@ -20,3 +20,8 @@ void PersonalBudget::userLogOut()
 {
     userManager.userLogOut();
 }
+
+void PersonalBudget::addIncome()
+{
+    incomesEncomesManager.addIncome();
+}

@@ -15,7 +15,7 @@ class AuxilaryMethods
 {
 public:
     static string conversionIntToString(int liczba);
-    static string wczytajLinie();
+    static string loadLine();
     static char selectOptionFromMainMenu();
     static char selectOptionFromUserMenu();
     static char loadSign();

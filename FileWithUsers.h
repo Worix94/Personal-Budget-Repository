@@ -1,3 +1,7 @@
+#ifndef FILEWITHUSERS.H
+#define FILEWITHUSERS.H
+
+
 #include <iostream>
 #include <vector>
 #include "AuxilaryMethods.h"
@@ -13,8 +17,10 @@ CMarkup xml;
 string FILE_WITH_USERS_NAME;
 
 public:
-    FileWIthUsers(string fileWIthUsersName){FILE_WITH_USERS_NAME=fileWIthUsersName;};
+    FileWIthUsers(){};
     void writeUserToFile(User user);
     void loadingUsersFromFile(vector<User>&users);
     void saveAllUsersToFile();
 };
+
+#endif // FILEWITHUSERS

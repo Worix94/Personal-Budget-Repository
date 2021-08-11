@@ -1,3 +1,6 @@
+#ifndef USERMANAGER.H
+#define USERMANAGER.H
+
 #include <iostream>
 #include <vector>
 
@@ -7,15 +10,16 @@
 
 using namespace std;
 
-class UserManager{
-int loggedUserId;
-vector<User> users;
-FileWIthUsers fileWithUsers;
+class UserManager {
+    int loggedUserId;
+    vector<User> users;
+    FileWIthUsers fileWithUsers;
 
 public:
-    UserManager(string fileWithUsersName):fileWithUsers(fileWithUsersName)
-    {loggedUserId=0;
-    fileWithUsers.loadingUsersFromFile(users);};
+    UserManager() {
+        loggedUserId=0;
+        fileWithUsers.loadingUsersFromFile(users);
+    };
     void userRegister();
     int userLogin();
     void enterNewUserData();
@@ -23,3 +27,5 @@ public:
     void userLogOut();
     int getNewUserId();
 };
+
+#endif
