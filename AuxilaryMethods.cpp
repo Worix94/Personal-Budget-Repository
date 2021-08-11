@@ -26,11 +26,11 @@ string AuxilaryMethods::conversionIntToString(int liczba)
     return str;
 }
 
-string AuxilaryMethods::wczytajLinie()
+string AuxilaryMethods::loadLine()
 {
-    string wejscie = "";
-    getline(cin, wejscie);
-    return wejscie;
+    string entrance = "";
+    getline(cin, entrance);
+    return entrance;
 }
 
 char AuxilaryMethods::selectOptionFromMainMenu()
