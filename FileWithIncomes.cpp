@@ -25,7 +25,7 @@ void FileWithIncomes::writeIncomeToFile(Income &income,string date)
     while(xml.FindElem("Income"))
     {
         xml.IntoElem();
-        xml.FindElem("IncomeId");income.setIncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData()));
+        xml.FindElem("IncomeId");income.setIncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData())+1);
         xml.OutOfElem();
     }
     xml.ResetPos();
@@ -33,7 +33,7 @@ void FileWithIncomes::writeIncomeToFile(Income &income,string date)
     xml.IntoElem();
     xml.AddElem("Income");
     xml.IntoElem();
-    xml.AddElem("IncomeId",income.getIncomeId()+1);
+    xml.AddElem("IncomeId",income.getIncomeId());
     xml.AddElem("UserId",income.getUserId());
     xml.AddElem("Date",date);
     xml.AddElem("Item",income.getItem());

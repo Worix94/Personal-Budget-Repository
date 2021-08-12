@@ -26,10 +26,10 @@
 1627991140 c:\users\worix94\desktop\programy\personal budget\user.h
 	<iostream>
 
-1628779164 source:c:\users\worix94\desktop\programy\personal budget\auxilarymethods.cpp
+1628782206 source:c:\users\worix94\desktop\programy\personal budget\auxilarymethods.cpp
 	"AuxilaryMethods.h"
 
-1628779047 c:\users\worix94\desktop\programy\personal budget\auxilarymethods.h
+1628782651 c:\users\worix94\desktop\programy\personal budget\auxilarymethods.h
 	<iostream>
 	<fstream>
 	<windows.h>
@@ -68,13 +68,13 @@
 
 1628673190 source:c:\users\worix94\desktop\programy\personal budget\filewithencomes.cpp
 
-1628777370 source:c:\users\worix94\desktop\programy\personal budget\filewithincomes.cpp
+1628782287 source:c:\users\worix94\desktop\programy\personal budget\filewithincomes.cpp
 	"FileWithIncomes.h"
 
 1628768209 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
 	"Income.h"
 
-1628779384 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
+1628782206 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
 	"IncomesEncomesManager.h"
 
 1628684857 source:c:\users\worix94\desktop\programy\personal budget\date.cpp

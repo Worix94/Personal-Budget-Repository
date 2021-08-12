@@ -21,8 +21,11 @@ public:
     static char selectOptionFromUserMenu();
     static char loadSign();
     static int conversionStringToInt(string number);
-    static string convertDateWithDashes(string Date);
+    static string convertDateWithDashes(string date);
     static string getTodaysDate();
+    static bool isDateCorrect(string date);
+    int howManyDaysMonthHas(int year,int month);
+    bool whetherTheYearIsLeap(int year);
 };
 
 #endif

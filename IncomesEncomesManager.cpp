@@ -17,7 +17,12 @@ string IncomesEncomesManager::getNewIncomeData(Income &income) {
         } else if(sign=='2') {
             cout<<"Enter income date (rrrr-mm-dd): ";
             date=AuxilaryMethods::loadLine();
-            break;
+            if(AuxilaryMethods::isDateCorrect(date)) break;
+            else {
+                cout<<"Incorrect date choosen "<<endl;
+                Sleep(2000);
+            }
+
         } else {
             cout<<"Bad choice. Choose 1 or 2 ";
             Sleep (2000);
