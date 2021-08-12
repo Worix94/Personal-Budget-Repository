@@ -6,11 +6,19 @@
 using namespace std;
 
 class PersonalBudget{
+    string FILE_WITH_INCOMES_NAME;
+    string FILE_WITH_ENCOMES_NAME;
     UserManager userManager;
-    IncomesEncomesManager incomesEncomesManager;
+    IncomesEncomesManager *incomesEncomesManager;
 
 public:
-    PersonalBudget(string fileWithIncomesName):incomesEncomesManager(fileWithIncomesName){};
+    PersonalBudget(string fileWithUsersName,string fileWithIncomesName,string fileWithEncomesName):userManager(fileWithUsersName),FILE_WITH_INCOMES_NAME(fileWithIncomesName)
+    {incomesEncomesManager=NULL;};
+
+    ~PersonalBudget(){
+    delete incomesEncomesManager;
+    incomesEncomesManager=NULL;
+    };
     void userRegister();
     void userLogin();
     int getLoggedUserId();

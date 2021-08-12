@@ -4,23 +4,22 @@
 #include "Encome.h"
 #include "UserManager.h"
 #include "FileWithIncomes.h"
+#include "AuxilaryMethods.h"
 
 using namespace std;
 
 class IncomesEncomesManager{
-UserManager userManager;
+const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 FileWithIncomes fileWithIncomes;
 vector<Income> incomes;
 vector<Encome> encomes;
 int date;
 
 public:
-IncomesEncomesManager(string fileWithIncomesName):fileWithIncomes(fileWithIncomesName){};
+IncomesEncomesManager(string fileWithIncomesName,string fileWithEncomesName,int idZalogowanegoUzytkownika):fileWithIncomes(fileWithIncomesName),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){};
 void showBalanceOfCurrentMonth();
 void showBalanceOfPreviousMonth();
 void showBalanceOfSelectedPeriod();
-void saveIncomesToFile();
-void saveEncomesToFile();
 void addIncome();
-Income getNewIncomeData();
+string getNewIncomeData(Income &income);
 };

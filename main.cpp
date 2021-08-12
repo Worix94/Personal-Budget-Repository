@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     char choice;
-    PersonalBudget personalBudget("incomes.xml");
+    PersonalBudget personalBudget("users.xml","incomes.xml","encomes.xml");
     while (true)
     {
     if(personalBudget.getLoggedUserId()==0){
@@ -39,7 +39,8 @@ int main()
                 personalBudget.addIncome();
                 break;
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
+                cout<<personalBudget.getLoggedUserId()<<endl;
+                Sleep(1000);
                 break;
             case '3':
                 //wyszukajAdresatowPoNazwisku(adresaci);

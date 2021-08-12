@@ -16,7 +16,7 @@ class UserManager {
     FileWIthUsers fileWithUsers;
 
 public:
-    UserManager() {
+    UserManager(string fileWithUsersName):fileWithUsers(fileWithUsersName) {
         loggedUserId=0;
         fileWithUsers.loadingUsersFromFile(users);
     };
@@ -26,6 +26,7 @@ public:
     int getLoggedUserId();
     void userLogOut();
     int getNewUserId();
+    bool isUserLoggedIn();
 };
 
 #endif

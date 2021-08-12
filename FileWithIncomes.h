@@ -14,7 +14,7 @@ int lastIncomeId;
 
 public:
     FileWithIncomes(string FileWithIncomesName){FILE_WITH_INCOMES_NAME=FileWithIncomesName;lastIncomeId=0;};
-    void writeIncomeToFile(Income income);
+    void writeIncomeToFile(Income income,string date);
     void loadingIncomesOfLoggedUser();
     void addIncome();
     void saveIncomesToFile();

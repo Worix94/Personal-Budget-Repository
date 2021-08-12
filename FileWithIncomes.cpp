@@ -13,7 +13,7 @@ int FileWithIncomes::getlastIncomeId()
     return lastIncomeId;
 }
 
-void FileWithIncomes::writeIncomeToFile(Income income)
+void FileWithIncomes::writeIncomeToFile(Income income,string date)
 {
     CMarkup xml;
     bool FileExists = xml.Load( FILE_WITH_INCOMES_NAME );
@@ -34,7 +34,8 @@ void FileWithIncomes::writeIncomeToFile(Income income)
     xml.AddElem("Income");
     xml.IntoElem();
     xml.AddElem("IncomeId",income.getIncomeId()+1);
-    xml.AddElem("Date",income.getDate());
+    xml.AddElem("UserId",income.getUserId());
+    xml.AddElem("Date",date);
     xml.AddElem("Item",income.getItem());
     xml.AddElem("Amount",income.getAmount());
     xml.Save(FILE_WITH_INCOMES_NAME);

@@ -18,10 +18,10 @@ char AuxilaryMethods::loadSign()
     return sign;
 }
 
-string AuxilaryMethods::conversionIntToString(int liczba)
+string AuxilaryMethods::conversionIntToString(int number)
 {
     ostringstream ss;
-    ss << liczba;
+    ss << number;
     string str = ss.str();
     return str;
 }
@@ -70,68 +70,43 @@ char AuxilaryMethods::selectOptionFromUserMenu()
     return choice;
 }
 
-string AuxilaryMethods::pobierzLiczbe(string tekst, int pozycjaZnaku)
+int AuxilaryMethods::conversionStringToInt(string number)
 {
-    string liczba = "";
-    while(isdigit(tekst[pozycjaZnaku]) == true)
-    {
-        liczba += tekst[pozycjaZnaku];
-        pozycjaZnaku ++;
-    }
-    return liczba;
+    int numberInt;
+    istringstream iss(number);
+    iss >> numberInt;
+
+    return numberInt;
 }
 
-int AuxilaryMethods::conversionStringToInt(string liczba)
-{
-    int liczbaInt;
-    istringstream iss(liczba);
-    iss >> liczbaInt;
 
-    return liczbaInt;
-}
-
-string AuxilaryMethods::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
+string AuxilaryMethods::convertDateWithDashes(string Date)
 {
-    if (!tekst.empty())
+    int length=Date.length();
+    int dashesCount=0;
+    string year,month,day,date;
+    for (int i=0;i<length;i++)
     {
-        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
-        tekst[0] = toupper(tekst[0]);
-    }
-    return tekst;
-}
-
-int AuxilaryMethods::wczytajLiczbeCalkowita()
-{
-    string wejscie = "";
-    int liczba = 0;
-
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        stringstream myStream(wejscie);
-        if (myStream >> liczba)
+        if(Date[i]=='-')
+        {
+            dashesCount++;
+        }
+        else
+        {
+            switch(dashesCount)
+        {
+        case 0:
+            year+=Date[i];
             break;
-        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+            case 1:
+            month+=Date[i];
+            break;
+            case 2:
+            day+=Date[i];
+            break;
+        }
+        }
     }
-    return liczba;
-}
-
-char AuxilaryMethods::wybierzOpcjeZMenuEdycja()
-{
-    char wybor;
-
-    cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Ktore dane zaktualizowac: " << endl;
-    cout << "1 - Imie" << endl;
-    cout << "2 - Nazwisko" << endl;
-    cout << "3 - Numer telefonu" << endl;
-    cout << "4 - Email" << endl;
-    cout << "5 - Adres" << endl;
-    cout << "6 - Powrot " << endl;
-    cout << endl << "Twoj wybor: ";
-    wybor = loadSign();
-
-    return wybor;
+    date=year+month+day;
+    return date;
 }
