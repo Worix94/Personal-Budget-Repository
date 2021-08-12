@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <time.h>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ public:
     static char loadSign();
     static int conversionStringToInt(string number);
     static string convertDateWithDashes(string Date);
+    static string getTodaysDate();
 };
 
 #endif

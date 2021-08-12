@@ -110,3 +110,22 @@ string AuxilaryMethods::convertDateWithDashes(string Date)
     date=year+month+day;
     return date;
 }
+
+string AuxilaryMethods::getTodaysDate()
+{
+    char bufor[ 64 ];
+    time_t actualTime=time(0);
+    tm timeTM = * localtime(&actualTime);
+    string todaysDate,year,month,day;
+
+    strftime(bufor,sizeof(bufor), "%Y",&timeTM);
+    year=bufor;
+    strftime(bufor,sizeof(bufor), "%m",&timeTM);
+    month=bufor;
+    strftime(bufor,sizeof(bufor), "%d",&timeTM);
+    day=bufor;
+
+    todaysDate=year+'-'+month+'-'+day;
+
+    return todaysDate;
+}

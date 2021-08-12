@@ -14,8 +14,8 @@ int lastIncomeId;
 
 public:
     FileWithIncomes(string FileWithIncomesName){FILE_WITH_INCOMES_NAME=FileWithIncomesName;lastIncomeId=0;};
-    void writeIncomeToFile(Income income,string date);
-    void loadingIncomesOfLoggedUser();
+    void writeIncomeToFile(Income &income,string date);
+    vector<Income> loadingIncomesOfLoggedUser(int loggedUserId);
     void addIncome();
     void saveIncomesToFile();
     bool ifFileIsEmpty();

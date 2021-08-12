@@ -24,4 +24,5 @@ public:
     int getLoggedUserId();
     void userLogOut();
     void addIncome();
+    void displayAllIncomes();
 };

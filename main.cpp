@@ -43,7 +43,7 @@ int main()
                 Sleep(1000);
                 break;
             case '3':
-                //wyszukajAdresatowPoNazwisku(adresaci);
+                personalBudget.displayAllIncomes();
                 break;
             case '4':
                 //ksiazkaAdresowa.wyswietlWszystkichAdresatowUzytkownika();
