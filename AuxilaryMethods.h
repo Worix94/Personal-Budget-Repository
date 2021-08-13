@@ -7,6 +7,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <time.h>
 
 using namespace std;
 
@@ -14,16 +15,17 @@ using namespace std;
 class AuxilaryMethods
 {
 public:
-    static string conversionIntToString(int liczba);
+    static string conversionIntToString(int number);
     static string loadLine();
     static char selectOptionFromMainMenu();
     static char selectOptionFromUserMenu();
     static char loadSign();
-    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    static int conversionStringToInt(string liczba);
-    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    static int wczytajLiczbeCalkowita();
-    static char wybierzOpcjeZMenuEdycja();
+    static int conversionStringToInt(string number);
+    static string convertDateWithDashes(string date);
+    static string getTodaysDate();
+    static bool isDateCorrect(string date);
+    int howManyDaysMonthHas(int year,int month);
+    bool whetherTheYearIsLeap(int year);
 };
 
 #endif

@@ -17,7 +17,7 @@ CMarkup xml;
 string FILE_WITH_USERS_NAME;
 
 public:
-    FileWIthUsers(){};
+    FileWIthUsers(string fileWithUsersName):FILE_WITH_USERS_NAME(fileWithUsersName){};
     void writeUserToFile(User user);
     void loadingUsersFromFile(vector<User>&users);
     void saveAllUsersToFile();

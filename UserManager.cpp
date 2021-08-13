@@ -47,8 +47,8 @@ int UserManager::userLogin()
                     if (users[i].getPassword()==password) {
                         cout<<"You logged in."<<endl;
                         Sleep(1000);
-                        return loggedUserId=users[i].getUserId();
-
+                        loggedUserId=users[i].getUserId();
+                        return loggedUserId;
                     }
                 }
                 cout<<"You wrote 3 times an error password. "<<endl;
@@ -68,4 +68,10 @@ int UserManager::getLoggedUserId()
 void UserManager::userLogOut()
 {
     loggedUserId=0;
+}
+
+bool UserManager::isUserLoggedIn()
+{
+    if(loggedUserId>0) return true;
+    else return false;
 }

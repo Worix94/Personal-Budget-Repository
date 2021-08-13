@@ -9,6 +9,10 @@ void PersonalBudget::userRegister()
 void PersonalBudget::userLogin()
 {
     userManager.userLogin();
+    if(userManager.isUserLoggedIn())
+    {
+        incomesEncomesManager= new IncomesEncomesManager(FILE_WITH_INCOMES_NAME,FILE_WITH_ENCOMES_NAME,userManager.getLoggedUserId());
+    }
 }
 
 int PersonalBudget::getLoggedUserId()
@@ -23,5 +27,10 @@ void PersonalBudget::userLogOut()
 
 void PersonalBudget::addIncome()
 {
-    incomesEncomesManager.addIncome();
+    incomesEncomesManager -> addIncome();
+}
+
+void PersonalBudget::displayAllIncomes()
+{
+    incomesEncomesManager -> displayAllIncomes();
 }
