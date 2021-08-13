@@ -39,14 +39,13 @@ int main()
                 personalBudget.addIncome();
                 break;
             case '2':
-                cout<<personalBudget.getLoggedUserId()<<endl;
-                Sleep(1000);
+                personalBudget.addEncome();
                 break;
             case '3':
                 personalBudget.displayAllIncomes();
                 break;
             case '4':
-                //ksiazkaAdresowa.wyswietlWszystkichAdresatowUzytkownika();
+                personalBudget.displayAllEncomes();
                 break;
             case '5':
                 //ksiazkaAdresowa.usunAdresata();

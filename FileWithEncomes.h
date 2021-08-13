@@ -1,21 +1,24 @@
 #include <iostream>
 #include <vector>
 
-#include "Date.h""
 #include "Markup.h"
 #include "AuxilaryMethods.h"
+#include "Encome.h"
+
 
 using namespace std;
 
 class FileWithEncomes{
-string FileWithEncomesName;
-Cmarkup xmlFile;
+    int lastEncomeId;
+string FILE_WITH_ENCOMES_NAME;
 
 public:
-    FileWithEncomes(){};
-    void writeEncomeToFile();
-    void loadingEncomesOfLoggedUser();
+    FileWithEncomes(string FileWithEncomesName){FILE_WITH_ENCOMES_NAME=FileWithEncomesName;lastEncomeId=0;};
+    void writeEncomeToFile(Encome &encome,string date);
+    vector<Encome> loadingEncomesOfLoggedUser(int loggedUserId);
     void addEncome();
     void saveEncomesToFile();
+    bool ifFileIsEmpty();
+    int getlastEncomeId();
 
 };

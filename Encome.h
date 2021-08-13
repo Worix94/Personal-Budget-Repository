@@ -1,3 +1,7 @@
+#ifndef ENCOME.H
+#define ENCOME.H
+
+
 #include <iostream>
 
 #include "Date.h"
@@ -24,3 +28,5 @@ void setDate(int newDate);
 void setItem(string newItem);
 void setAmount(int newAmount);
 };
+
+#endif // ENCOME

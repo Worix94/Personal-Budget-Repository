@@ -34,3 +34,13 @@ void PersonalBudget::displayAllIncomes()
 {
     incomesEncomesManager -> displayAllIncomes();
 }
+
+void PersonalBudget::addEncome()
+{
+    incomesEncomesManager -> addEncome();
+}
+
+void PersonalBudget::displayAllEncomes()
+{
+    incomesEncomesManager -> displayAllEncomes();
+}
