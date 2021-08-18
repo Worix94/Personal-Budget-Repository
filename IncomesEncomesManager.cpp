@@ -53,6 +53,7 @@ void IncomesEncomesManager::addIncome() {
 }
 
 void IncomesEncomesManager::displayAllIncomes() {
+    sort( incomes.begin( ), incomes.end( ));
     for(int i=0; i<incomes.size(); i++) {
         cout<<"Income Id: "<<incomes[i].getIncomeId()<<endl;
         cout<<"User Id: "<<incomes[i].getUserId()<<endl;
@@ -64,6 +65,7 @@ void IncomesEncomesManager::displayAllIncomes() {
 }
 
 void IncomesEncomesManager::displayAllEncomes() {
+    std::sort(encomes.begin(),encomes.end());
     for(int i=0; i<encomes.size(); i++) {
         cout<<"Encome Id: "<<encomes[i].getEncomeId()<<endl;
         cout<<"User Id: "<<encomes[i].getUserId()<<endl;
@@ -124,3 +126,4 @@ void IncomesEncomesManager::addEncome() {
     cout<<"New encome added"<<endl;
     Sleep(1500);
 }
+

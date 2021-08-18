@@ -27,6 +27,10 @@ void setUserId(int newUserId);
 void setDate(int newDate);
 void setItem(string newItem);
 void setAmount(int newAmount);
+bool operator < (const Encome& str) const
+    {
+        return (date < str.date);
+    }
 };
 
 #endif // ENCOME

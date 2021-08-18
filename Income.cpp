@@ -3,7 +3,7 @@
 
 int Income::getIncomeId(){return incomeId;}
 int Income::getUserId(){return userId;}
-int Income::getDate(){return date;}
+int Income::getDate(){return this -> date;}
 string Income::getItem(){return item;}
 int Income::getAmount(){return amount;}
 void Income::setIncomeId(int newIncomeId){incomeId=newIncomeId;}

@@ -72,7 +72,7 @@
 1628856707 source:c:\users\worix94\desktop\programy\personal budget\filewithincomes.cpp
 	"FileWithIncomes.h"
 
-1628856707 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
+1629292042 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
 	"Income.h"
 
 1628858032 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
@@ -84,16 +84,18 @@
 1628684857 c:\users\worix94\desktop\programy\personal budget\date.h
 	<iostream>
 
-1628856707 c:\users\worix94\desktop\programy\personal budget\income.h
+1629292210 c:\users\worix94\desktop\programy\personal budget\income.h
 	<iostream>
 	"Date.h"
 
-1628857482 c:\users\worix94\desktop\programy\personal budget\encome.h
+1629292293 c:\users\worix94\desktop\programy\personal budget\encome.h
 	<iostream>
 	"Date.h"
 
-1628857822 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
+1628859009 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
 	<iostream>
+	<algorithm>
+	<vector>
 	"Income.h"
 	"Encome.h"
 	"UserManager.h"
