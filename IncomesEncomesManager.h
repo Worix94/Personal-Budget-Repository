@@ -36,4 +36,6 @@ string getNewEncomeData(Encome &encome);
 void displayAllEncomes();
 void displayBalanceOfCurrentMonth();
 bool isDateInCurrentMonth(string checkingDate);
+bool isDateInLastMonth(string checkingDate);
+void displayBalanceOfLastMonth();
 };
