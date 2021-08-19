@@ -12,7 +12,7 @@ class PersonalBudget{
     IncomesEncomesManager *incomesEncomesManager;
 
 public:
-    PersonalBudget(string fileWithUsersName,string fileWithIncomesName,string fileWithEncomesName):userManager(fileWithUsersName),FILE_WITH_INCOMES_NAME(fileWithIncomesName)
+    PersonalBudget(string fileWithUsersName,string fileWithIncomesName,string fileWithEncomesName):userManager(fileWithUsersName),FILE_WITH_INCOMES_NAME(fileWithIncomesName),FILE_WITH_ENCOMES_NAME(fileWithEncomesName)
     {incomesEncomesManager=NULL;};
 
     ~PersonalBudget(){
@@ -24,5 +24,7 @@ public:
     int getLoggedUserId();
     void userLogOut();
     void addIncome();
-    void displayAllIncomes();
+    void displayBalanceOfCurrentMonth();
+    void addEncome();
+    void displayAllEncomes();
 };

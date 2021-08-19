@@ -114,8 +114,7 @@ string AuxilaryMethods::getTodaysDate() {
     return todaysDate;
 }
 
-bool AuxilaryMethods::whetherTheYearIsLeap(int year)
-{
+bool AuxilaryMethods::whetherTheYearIsLeap(int year) {
     if ((year % 4 ==0) && (year % 100 != 0) || (year % 400 ==0)) return true;
     else return false;
 }
@@ -157,14 +156,33 @@ bool AuxilaryMethods::isDateCorrect(string date) {
     actualYearInt=conversionStringToInt(actualYear);
     actualMonthInt=conversionStringToInt(actualMonth);
     actualDayInt=conversionStringToInt(actualDay);
-    //int numberOfDaysMonthHas=howManyDaysMonthHas(yearInt,monthInt);
+    int numberOfDaysMonthHas=howManyDaysMonthHas(yearInt,monthInt);
 
-    if(yearInt==actualYearInt)
-    {
-        if(monthInt>0&&monthInt<=actualMonthInt&&dayInt>0&&dayInt<=actualDayInt) return true;
+    if(yearInt==actualYearInt) {
+        if(monthInt==actualMonthInt) {
+            if(dayInt>0&&dayInt<=numberOfDaysMonthHas&&dayInt<=actualDayInt)return true;
+            else return false;
+            } else if(monthInt>0&&monthInt<=actualMonthInt&&dayInt>0&&dayInt<=numberOfDaysMonthHas) return true;
         else return false;
-    }
-    else if(yearInt>=2000&&yearInt<=actualYearInt&&monthInt>0&&monthInt<<13&&dayInt>0&&dayInt<=31) return true;
+    } else if(yearInt>=2000&&yearInt<=actualYearInt&&monthInt>0&&monthInt<13&&dayInt>0&&dayInt<=numberOfDaysMonthHas) return true;
     else return false;
 
+}
+
+string AuxilaryMethods::convertDateToDateWithDashes(string date)
+{
+    string year,month,day;
+    for(int i=0; i<date.length(); i++) {
+        if(i<4) {
+            year+=date[i];
+        } else if(i>3&&i<6) {
+            month+=date[i];
+        } else if(i>5&&i<8) {
+            day+=date[i];
+        }
+    }
+
+    string dateWithDashes=year+'-'+month+'-'+day;
+
+    return dateWithDashes;
 }
