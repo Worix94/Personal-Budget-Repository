@@ -52,28 +52,18 @@ void IncomesEncomesManager::addIncome() {
     Sleep(1500);
 }
 
-void IncomesEncomesManager::displayAllIncomes() {
-    sort( incomes.begin( ), incomes.end( ));
-    for(int i=0; i<incomes.size(); i++) {
-        cout<<"Income Id: "<<incomes[i].getIncomeId()<<"  ";
-        //cout<<"User Id: "<<incomes[i].getUserId()<<endl;
-        cout<<"Date of income: "<<incomes[i].getDate()<<"  ";
-        cout<<"Item name: "<<incomes[i].getItem()<<"  ";
-        cout<<"Amount: "<<incomes[i].getAmount()<<endl;
-    }
-    system("pause");
+void IncomesEncomesManager::displayIncome(Income &income) {
+    cout<<"Income Id: "<<income.getIncomeId()<<"  ";
+    cout<<"Date of income: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(income.getDate()))<<"  ";
+    cout<<"Item name: "<<income.getItem()<<"  ";
+    cout<<"Amount: "<<income.getAmount()<<endl;
 }
 
-void IncomesEncomesManager::displayAllEncomes() {
-    std::sort(encomes.begin(),encomes.end());
-    for(int i=0; i<encomes.size(); i++) {
-        cout<<"Encome Id: "<<encomes[i].getEncomeId()<<"  ";
-        //cout<<"User Id: "<<encomes[i].getUserId()<<endl;
-        cout<<"Date of income: "<<encomes[i].getDate()<<"  ";
-        cout<<"Item name: "<<encomes[i].getItem()<<"  ";
-        cout<<"Amount: "<<encomes[i].getAmount()<<endl;
-    }
-    system("pause");
+void IncomesEncomesManager::displayEncome(Encome &encome) {
+    cout<<"Encome Id: "<<encome.getEncomeId()<<"  ";
+    cout<<"Date of encome: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(encome.getDate()))<<"  ";
+    cout<<"Item name: "<<encome.getItem()<<"  ";
+    cout<<"Amount: "<<encome.getAmount()<<endl;
 }
 
 string IncomesEncomesManager::getNewEncomeData(Encome &encome) {
@@ -127,8 +117,7 @@ void IncomesEncomesManager::addEncome() {
     Sleep(1500);
 }
 
-bool IncomesEncomesManager::isDateInCurrentMonth(string checkingDate)
-{
+bool IncomesEncomesManager::isDateInCurrentMonth(string checkingDate) {
     string year,currentYear,month,currentMonth,day,currentDay;
     int yearInt,currentYearInt,monthInt,currentMonthInt,dayInt,currentDayInt;
     string currentDate=AuxilaryMethods::convertDateWithDashes((AuxilaryMethods::getTodaysDate()));
@@ -155,34 +144,66 @@ bool IncomesEncomesManager::isDateInCurrentMonth(string checkingDate)
     else return false;
 }
 
-void IncomesEncomesManager::displayBalanceOfCurrentMonth()
+bool IncomesEncomesManager::isDateInLastMonth(string checkingDate) {
+    string year,currentYear,month,currentMonth,day,currentDay;
+    int yearInt,currentYearInt,monthInt,currentMonthInt,dayInt,currentDayInt;
+    string currentDate=AuxilaryMethods::convertDateWithDashes((AuxilaryMethods::getTodaysDate()));
+    for(int i=0; i<currentDate.length(); i++) {
+        if(i<4) {
+            year+=checkingDate[i];
+            currentYear+=currentDate[i];
+        } else if(i>3&&i<6) {
+            month+=checkingDate[i];
+            currentMonth+=currentDate[i];
+        } else if(i>5&&i<8) {
+            day+=checkingDate[i];
+            currentDay+=currentDate[i];
+        }
+    }
+    yearInt=AuxilaryMethods::conversionStringToInt(year);
+    monthInt=AuxilaryMethods::conversionStringToInt(month);
+    dayInt=AuxilaryMethods::conversionStringToInt(day);
+    currentYearInt=AuxilaryMethods::conversionStringToInt(currentYear);
+    currentMonthInt=AuxilaryMethods::conversionStringToInt(currentMonth);
+    currentDayInt=AuxilaryMethods::conversionStringToInt(currentDay);
+    int numberOfDaysMonthHas=AuxilaryMethods::howManyDaysMonthHas(yearInt,monthInt);
+    if(yearInt==currentYearInt&&monthInt==currentMonthInt-1&&dayInt<=numberOfDaysMonthHas&&dayInt>0) return true;
+    else return false;
+}
+
+bool IncomesEncomesManager::isDateInChosenPeriod(string startingDate,string endingDate,string date)
 {
+    int startingDateInt=AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(startingDate));
+    int endingDateInt=AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(endingDate));
+    int dateInt=AuxilaryMethods::conversionStringToInt(date);
+
+    if(dateInt>=startingDateInt&&dateInt<=endingDateInt) return true;
+    else return false;
+}
+
+void IncomesEncomesManager::displayBalanceOfCurrentMonth() {
+    system("cls");
     int totalIncomes=0,totalEncomes=0,balance=0;
+    cout<<">>>>>CURRENT MONTH BALANCE<<<<<"<<endl;
     cout<<"-------------------------------------"<<endl;
     cout<<"INCOMES:"<<endl;
+    std::sort(incomes.begin(),incomes.end());
     for(int i=0; i<incomes.size(); i++) {
-    string date=AuxilaryMethods::conversionIntToString(incomes[i].getDate());
-    if(isDateInCurrentMonth(date))
-    {
-        cout<<"Income Id: "<<incomes[i].getIncomeId()<<"|";
-        cout<<"Date of income: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(incomes[i].getDate()))<<"|";
-        cout<<"Item name: "<<incomes[i].getItem()<<"|";
-        cout<<"Amount: "<<incomes[i].getAmount()<<endl;
-        totalIncomes+=incomes[i].getAmount();
-    }
+        string date=AuxilaryMethods::conversionIntToString(incomes[i].getDate());
+        if(isDateInCurrentMonth(date)) {
+            displayIncome(incomes[i]);
+            totalIncomes+=incomes[i].getAmount();
+        }
     }
     cout<<"-------------------------------------"<<endl;
     cout<<"ENCOMES:"<<endl;
+    std::sort(encomes.begin(),encomes.end());
     for(int i=0; i<encomes.size(); i++) {
-    string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
-    if(isDateInCurrentMonth(date))
-    {
-        cout<<"Encome Id: "<<encomes[i].getEncomeId()<<"|";
-        cout<<"Date of income: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(encomes[i].getDate()))<<"|";
-        cout<<"Item name: "<<encomes[i].getItem()<<"|";
-        cout<<"Amount: "<<encomes[i].getAmount()<<endl;
-        totalEncomes+=encomes[i].getAmount();
-    }
+        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+        if(isDateInCurrentMonth(date)) {
+            displayEncome(encomes[i]);
+            totalEncomes+=encomes[i].getAmount();
+        }
     }
     cout<<"-------------------------------------"<<endl;
     cout<<"Total incomes from current month: "<<totalIncomes<<endl;
@@ -192,3 +213,85 @@ void IncomesEncomesManager::displayBalanceOfCurrentMonth()
     system("pause");
 }
 
+void IncomesEncomesManager::displayBalanceOfLastMonth() {
+    system("cls");
+    int totalIncomes=0,totalEncomes=0,balance=0;
+    cout<<">>>>>LAST MONTH BALANCE<<<<<"<<endl;
+    cout<<"-------------------------------------"<<endl;
+    cout<<"INCOMES:"<<endl;
+    std::sort(incomes.begin(),incomes.end());
+    for(int i=0; i<incomes.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(incomes[i].getDate());
+        if(isDateInLastMonth(date)) {
+            displayIncome(incomes[i]);
+            totalIncomes+=incomes[i].getAmount();
+        }
+    }
+    cout<<"-------------------------------------"<<endl;
+    cout<<"ENCOMES:"<<endl;
+    std::sort(encomes.begin(),encomes.end());
+    for(int i=0; i<encomes.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+        if(isDateInLastMonth(date)) {
+            displayEncome(encomes[i]);
+            totalEncomes+=encomes[i].getAmount();
+        }
+    }
+    cout<<"-------------------------------------"<<endl;
+    cout<<"Total incomes from current month: "<<totalIncomes<<endl;
+    cout<<"Total encomes from current month: "<<totalEncomes<<endl;
+    cout<<"-------------------------------------"<<endl;
+    cout<<"Balance sheet of the current month is: "<<totalIncomes-totalEncomes<<endl;
+    system("pause");
+}
+
+void IncomesEncomesManager::displayBalanceOfSelectedPeriod() {
+    string startingDate,endingDate;
+    system("cls");
+    while(true) {
+        while(true) {
+            cout<<"Enter starting date (rrrr-mm-dd): ";
+            startingDate=AuxilaryMethods::loadLine();
+            if(AuxilaryMethods::isDateCorrect(startingDate)) break;
+            else {
+                cout<<"Incorrect date choosen "<<endl;
+                Sleep(2000);
+            }
+        }
+        cout<<"Enter ending date (rrrr-mm-dd): ";
+        endingDate=AuxilaryMethods::loadLine();
+        if(AuxilaryMethods::isDateCorrect(endingDate)) break;
+        else {
+            cout<<"Incorrect date choosen "<<endl;
+            Sleep(2000);
+        }
+    }
+    int totalIncomes=0,totalEncomes=0,balance=0;
+    cout<<">>>>>BALANCE SHEET BETWEEN: "<<startingDate<<" and "<<endingDate<<"<<<<<"<<endl;
+    cout<<"-------------------------------------"<<endl;
+    cout<<"INCOMES:"<<endl;
+    std::sort(incomes.begin(),incomes.end());
+    for(int i=0; i<incomes.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(incomes[i].getDate());
+        if(isDateInChosenPeriod(startingDate,endingDate,date)) {
+            displayIncome(incomes[i]);
+            totalIncomes+=incomes[i].getAmount();
+        }
+    }
+    cout<<"-------------------------------------"<<endl;
+    cout<<"ENCOMES:"<<endl;
+    std::sort(encomes.begin(),encomes.end());
+    for(int i=0; i<encomes.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+        if(isDateInChosenPeriod(startingDate,endingDate,date)) {
+            displayEncome(encomes[i]);
+            totalEncomes+=encomes[i].getAmount();
+        }
+    }
+    cout<<"-------------------------------------"<<endl;
+    cout<<"Total incomes from current month: "<<totalIncomes<<endl;
+    cout<<"Total encomes from current month: "<<totalEncomes<<endl;
+    cout<<"-------------------------------------"<<endl;
+    cout<<"Balance sheet of the current month is: "<<totalIncomes-totalEncomes<<endl;
+    system("pause");
+}

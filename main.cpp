@@ -45,10 +45,10 @@ int main()
                 personalBudget.displayBalanceOfCurrentMonth();
                 break;
             case '4':
-                personalBudget.displayAllEncomes();
+                personalBudget.displayBalanceOfLastMonth();
                 break;
             case '5':
-                //ksiazkaAdresowa.usunAdresata();
+                personalBudget.displayBalanceOfSelectedPeriod();
                 break;
             case '6':
                 //ksiazkaAdresowa.edytujAdresata();

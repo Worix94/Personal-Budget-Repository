@@ -26,5 +26,6 @@ public:
     void addIncome();
     void displayBalanceOfCurrentMonth();
     void addEncome();
-    void displayAllEncomes();
+    void displayBalanceOfLastMonth();
+    void displayBalanceOfSelectedPeriod();
 };
