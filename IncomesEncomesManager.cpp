@@ -171,8 +171,7 @@ bool IncomesEncomesManager::isDateInLastMonth(string checkingDate) {
     else return false;
 }
 
-bool IncomesEncomesManager::isDateInChosenPeriod(string startingDate,string endingDate,string date)
-{
+bool IncomesEncomesManager::isDateInChosenPeriod(string startingDate,string endingDate,string date) {
     int startingDateInt=AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(startingDate));
     int endingDateInt=AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(endingDate));
     int dateInt=AuxilaryMethods::conversionStringToInt(date);

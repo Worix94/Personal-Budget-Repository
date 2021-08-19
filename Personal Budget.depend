@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1629378281 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
+1629381740 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 
@@ -17,7 +17,7 @@
 	<string>
 	<afx.h>
 
-1629378281 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
+1629381276 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
 	"PersonalBudget.h"
 
 1627991220 source:c:\users\worix94\desktop\programy\personal budget\user.cpp
@@ -38,27 +38,27 @@
 	<sstream>
 	<time.h>
 
-1628856707 source:c:\users\worix94\desktop\programy\personal budget\usermanager.cpp
+1629382378 source:c:\users\worix94\desktop\programy\personal budget\usermanager.cpp
 	"UserManager.h"
 
-1628856707 source:c:\users\worix94\desktop\programy\personal budget\filewithusers.cpp
+1629382325 source:c:\users\worix94\desktop\programy\personal budget\filewithusers.cpp
 	"FileWithUsers.h"
 
-1628856707 c:\users\worix94\desktop\programy\personal budget\filewithusers.h
+1629381384 c:\users\worix94\desktop\programy\personal budget\filewithusers.h
 	<iostream>
 	<vector>
 	"AuxilaryMethods.h"
 	"Markup.h"
 	"User.h"
 
-1628856707 c:\users\worix94\desktop\programy\personal budget\usermanager.h
+1629381276 c:\users\worix94\desktop\programy\personal budget\usermanager.h
 	<iostream>
 	<vector>
 	"User.h"
 	"AuxilaryMethods.h"
 	"FileWithUsers.h"
 
-1629378281 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
+1629381276 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
 	<iostream>
 	"UserManager.h"
 	"IncomesEncomesManager.h"
@@ -75,7 +75,7 @@
 1629366092 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
 	"Income.h"
 
-1629380433 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
+1629380987 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
 	"IncomesEncomesManager.h"
 
 1628684857 source:c:\users\worix94\desktop\programy\personal budget\date.cpp
@@ -92,7 +92,7 @@
 	<iostream>
 	"Date.h"
 
-1629380404 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
+1629380987 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
 	<iostream>
 	<algorithm>
 	<vector>

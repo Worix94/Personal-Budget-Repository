@@ -51,10 +51,10 @@ int main()
                 personalBudget.displayBalanceOfSelectedPeriod();
                 break;
             case '6':
-                //ksiazkaAdresowa.edytujAdresata();
+                //personalBudget.changePasswordOfLoggedUser();
                 break;
             case '7':
-                //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                personalBudget.changePasswordOfLoggedUser();
                 break;
             case '8':
                 personalBudget.userLogOut();

@@ -75,3 +75,21 @@ bool UserManager::isUserLoggedIn()
     if(loggedUserId>0) return true;
     else return false;
 }
+
+void UserManager::changePasswordOfLoggedUser()
+{
+    string newPassword = "";
+    cout << "Write new password: ";
+    newPassword = AuxilaryMethods::loadLine();
+
+    for(int i=0;i<users.size();i++)
+    {
+        if (users[i].getUserId() == getLoggedUserId())
+        {
+            users[i].setPassword(newPassword) ;
+            cout << "Password changed." << endl << endl;
+            system("pause");
+        }
+    }
+    fileWithUsers.saveAllUsersToFile(users);
+}
