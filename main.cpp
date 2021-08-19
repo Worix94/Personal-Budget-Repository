@@ -48,7 +48,7 @@ int main()
                 personalBudget.displayBalanceOfLastMonth();
                 break;
             case '5':
-                //ksiazkaAdresowa.usunAdresata();
+                personalBudget.displayBalanceOfSelectedPeriod();
                 break;
             case '6':
                 //ksiazkaAdresowa.edytujAdresata();

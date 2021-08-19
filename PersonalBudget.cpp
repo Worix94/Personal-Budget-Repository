@@ -44,3 +44,8 @@ void PersonalBudget::displayBalanceOfLastMonth()
 {
     incomesEncomesManager -> displayBalanceOfLastMonth();
 }
+
+void PersonalBudget::displayBalanceOfSelectedPeriod()
+{
+    incomesEncomesManager -> displayBalanceOfSelectedPeriod();
+}

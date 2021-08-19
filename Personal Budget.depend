@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1629366411 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
+1629378281 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 
@@ -17,7 +17,7 @@
 	<string>
 	<afx.h>
 
-1629366431 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
+1629378281 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
 	"PersonalBudget.h"
 
 1627991220 source:c:\users\worix94\desktop\programy\personal budget\user.cpp
@@ -58,7 +58,7 @@
 	"AuxilaryMethods.h"
 	"FileWithUsers.h"
 
-1629366422 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
+1629378281 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
 	<iostream>
 	"UserManager.h"
 	"IncomesEncomesManager.h"
@@ -75,7 +75,7 @@
 1629366092 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
 	"Income.h"
 
-1629366296 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
+1629380433 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
 	"IncomesEncomesManager.h"
 
 1628684857 source:c:\users\worix94\desktop\programy\personal budget\date.cpp
@@ -92,7 +92,7 @@
 	<iostream>
 	"Date.h"
 
-1629366247 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
+1629380404 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
 	<iostream>
 	<algorithm>
 	<vector>
