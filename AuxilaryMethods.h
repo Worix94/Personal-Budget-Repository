@@ -24,8 +24,9 @@ public:
     static string convertDateWithDashes(string date);
     static string getTodaysDate();
     static bool isDateCorrect(string date);
-    int howManyDaysMonthHas(int year,int month);
-    bool whetherTheYearIsLeap(int year);
+    static int howManyDaysMonthHas(int year,int month);
+    static bool whetherTheYearIsLeap(int year);
+    static string convertDateToDateWithDashes(string date);
 };
 
 #endif

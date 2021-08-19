@@ -24,7 +24,7 @@ public:
     int getLoggedUserId();
     void userLogOut();
     void addIncome();
-    void displayAllIncomes();
+    void displayBalanceOfCurrentMonth();
     void addEncome();
     void displayAllEncomes();
 };

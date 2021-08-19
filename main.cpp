@@ -42,7 +42,7 @@ int main()
                 personalBudget.addEncome();
                 break;
             case '3':
-                personalBudget.displayAllIncomes();
+                personalBudget.displayBalanceOfCurrentMonth();
                 break;
             case '4':
                 personalBudget.displayAllEncomes();

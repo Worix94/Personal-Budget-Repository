@@ -30,9 +30,9 @@ void PersonalBudget::addIncome()
     incomesEncomesManager -> addIncome();
 }
 
-void PersonalBudget::displayAllIncomes()
+void PersonalBudget::displayBalanceOfCurrentMonth()
 {
-    incomesEncomesManager -> displayAllIncomes();
+    incomesEncomesManager -> displayBalanceOfCurrentMonth();
 }
 
 void PersonalBudget::addEncome()
