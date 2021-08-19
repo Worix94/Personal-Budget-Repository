@@ -51,3 +51,25 @@ void FileWIthUsers::writeUserToFile(User user)
     xml.Save(FILE_WITH_USERS_NAME);
 
 }
+
+void FileWIthUsers::saveAllUsersToFile(vector<User> &users)
+{
+    CMarkup xml;
+    xml.AddElem("Users");
+    for(int i=0;i<users.size();i++)
+    {
+        xml.ResetPos();
+        xml.FindElem("Users");
+        xml.IntoElem();
+        xml.AddElem("User");
+        xml.IntoElem();
+        xml.AddElem("UserId",users[i].getUserId());
+        xml.AddElem("Login",users[i].getLogin());
+        xml.AddElem("Password",users[i].getPassword());
+        xml.AddElem("Name",users[i].getName());
+        xml.AddElem("Surname",users[i].getSurname());
+
+    }
+    xml.Save(FILE_WITH_USERS_NAME);
+
+}

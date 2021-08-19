@@ -49,3 +49,8 @@ void PersonalBudget::displayBalanceOfSelectedPeriod()
 {
     incomesEncomesManager -> displayBalanceOfSelectedPeriod();
 }
+
+void PersonalBudget::changePasswordOfLoggedUser()
+{
+    userManager.changePasswordOfLoggedUser();
+}

@@ -28,4 +28,5 @@ public:
     void addEncome();
     void displayBalanceOfLastMonth();
     void displayBalanceOfSelectedPeriod();
+    void changePasswordOfLoggedUser();
 };
