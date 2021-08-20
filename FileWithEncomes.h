@@ -4,21 +4,17 @@
 #include "Markup.h"
 #include "AuxilaryMethods.h"
 #include "Encome.h"
+#include "XmlFileWith.h"
 
 
 using namespace std;
 
-class FileWithEncomes{
+class FileWithEncomes : public XmlFileWith{
     int lastEncomeId;
-string FILE_WITH_ENCOMES_NAME;
+    string FILE_WITH_ENCOMES_NAME;
 
 public:
-    FileWithEncomes(string FileWithEncomesName){FILE_WITH_ENCOMES_NAME=FileWithEncomesName;lastEncomeId=0;};
+    FileWithEncomes(string FileWithEncomesName):XmlFileWith(FileWithEncomesName) {FILE_WITH_ENCOMES_NAME=getFileName();lastEncomeId=getLastRecordId();};
     void writeEncomeToFile(Encome &encome,string date);
     vector<Encome> loadingEncomesOfLoggedUser(int loggedUserId);
-    void addEncome();
-    void saveEncomesToFile();
-    bool ifFileIsEmpty();
-    int getlastEncomeId();
-
 };

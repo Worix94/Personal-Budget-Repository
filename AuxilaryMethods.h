@@ -27,6 +27,8 @@ public:
     static int howManyDaysMonthHas(int year,int month);
     static bool whetherTheYearIsLeap(int year);
     static string convertDateToDateWithDashes(string date);
+    static string conversionToAmountWithPointer(string amount);
+    static double conversionStringToDouble( string s );
 };
 
 #endif

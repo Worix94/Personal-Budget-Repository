@@ -71,7 +71,6 @@ int AuxilaryMethods::conversionStringToInt(string number) {
     return numberInt;
 }
 
-
 string AuxilaryMethods::convertDateWithDashes(string date) {
     int dashesCount=0;
     string year,month,day,dateWithoutDashes;
@@ -169,6 +168,18 @@ bool AuxilaryMethods::isDateCorrect(string date) {
 
 }
 
+string AuxilaryMethods::conversionToAmountWithPointer(string amount)
+{
+    for(int i=0;i<amount.length();i++)
+    {
+        if(amount[i]==',')
+        {
+            amount[i]='.';
+        }
+    }
+    return amount;
+}
+
 string AuxilaryMethods::convertDateToDateWithDashes(string date)
 {
     string year,month,day;
@@ -186,3 +197,12 @@ string AuxilaryMethods::convertDateToDateWithDashes(string date)
 
     return dateWithDashes;
 }
+
+ double AuxilaryMethods::conversionStringToDouble(string s )
+{
+   std::istringstream i(s);
+   double x;
+   if (!(i >> x))
+     return 0;
+   return x;
+ }

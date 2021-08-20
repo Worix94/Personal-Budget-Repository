@@ -1,19 +1,7 @@
 #include "FileWithEncomes.h"
 
-bool FileWithEncomes::ifFileIsEmpty(){
 
-    CMarkup xml;
-    bool FileExists = xml.Load( FILE_WITH_ENCOMES_NAME );
-    return FileExists;
-}
-
-int FileWithEncomes::getlastEncomeId()
-{
-    return lastEncomeId;
-}
-
-void FileWithEncomes::writeEncomeToFile(Encome &encome,string date)
-{
+void FileWithEncomes::writeEncomeToFile(Encome &encome,string date) {
     CMarkup xml;
     bool FileExists = xml.Load( FILE_WITH_ENCOMES_NAME );
     if(!FileExists) {
@@ -21,10 +9,10 @@ void FileWithEncomes::writeEncomeToFile(Encome &encome,string date)
     }
     xml.FindElem();
     xml.IntoElem();
-    while(xml.FindElem("Encome"))
-    {
+    while(xml.FindElem("Encome")) {
         xml.IntoElem();
-        xml.FindElem("EncomeId");encome.setEncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData())+1);
+        xml.FindElem("EncomeId");
+        encome.setEncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData())+1);
         xml.OutOfElem();
     }
     xml.ResetPos();
@@ -41,8 +29,7 @@ void FileWithEncomes::writeEncomeToFile(Encome &encome,string date)
 
 }
 
-vector<Encome> FileWithEncomes::loadingEncomesOfLoggedUser(int loggedUserId)
-{
+vector<Encome> FileWithEncomes::loadingEncomesOfLoggedUser(int loggedUserId) {
     vector<Encome> encomes;
     Encome encome;
     CMarkup xml;
@@ -51,15 +38,19 @@ vector<Encome> FileWithEncomes::loadingEncomesOfLoggedUser(int loggedUserId)
     xml.ResetPos();
     xml.FindElem("Encomes");
     xml.IntoElem();
-    while(xml.FindElem("Encome"))
-    {
+    while(xml.FindElem("Encome")) {
         xml.IntoElem();
-        xml.FindElem("EncomeId");encome.setEncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData()));
-        xml.FindElem("UserId");UserFromXmlId=AuxilaryMethods::conversionStringToInt(xml.GetData());
+        xml.FindElem("EncomeId");
+        encome.setEncomeId(AuxilaryMethods::conversionStringToInt(xml.GetData()));
+        xml.FindElem("UserId");
+        UserFromXmlId=AuxilaryMethods::conversionStringToInt(xml.GetData());
         encome.setUserId(UserFromXmlId);
-        xml.FindElem("Date");encome.setDate(AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(xml.GetData())));
-        xml.FindElem("Item");encome.setItem(xml.GetData());
-        xml.FindElem("Amount");encome.setAmount(AuxilaryMethods::conversionStringToInt(xml.GetData()));
+        xml.FindElem("Date");
+        encome.setDate(AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(xml.GetData())));
+        xml.FindElem("Item");
+        encome.setItem(xml.GetData());
+        xml.FindElem("Amount");
+        encome.setAmount(AuxilaryMethods::conversionToAmountWithPointer(xml.GetData()));
         if(UserFromXmlId==loggedUserId)encomes.push_back(encome);
         xml.OutOfElem();
     }
