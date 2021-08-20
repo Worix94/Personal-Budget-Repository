@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-#include "Date.h"
 
 using namespace std;
 
@@ -13,7 +12,7 @@ int encomeId;
 int userId;
 int date;
 string item;
-double amount;
+string amount;
 
 public:
 
@@ -21,12 +20,12 @@ int getEncomeId();
 int getUserId();
 int getDate();
 string getItem();
-double getAmount();
+string getAmount();
 void setEncomeId(int newEncomeId);
 void setUserId(int newUserId);
 void setDate(int newDate);
 void setItem(string newItem);
-void setAmount(int newAmount);
+void setAmount(string newAmount);
 bool operator < (const Encome& str) const
     {
         return (date < str.date);

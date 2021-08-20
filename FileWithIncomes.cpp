@@ -1,17 +1,6 @@
 #include "FileWithIncomes.h"
 
 
-bool FileWithIncomes::ifFileIsEmpty(){
-
-    CMarkup xml;
-    bool FileExists = xml.Load( FILE_WITH_INCOMES_NAME );
-    return FileExists;
-}
-
-int FileWithIncomes::getlastIncomeId()
-{
-    return lastIncomeId;
-}
 
 void FileWithIncomes::writeIncomeToFile(Income &income,string date)
 {
@@ -60,7 +49,7 @@ vector<Income> FileWithIncomes::loadingIncomesOfLoggedUser(int LoggedUserId)
         income.setUserId(UserFromXmlId);
         xml.FindElem("Date");income.setDate(AuxilaryMethods::conversionStringToInt(AuxilaryMethods::convertDateWithDashes(xml.GetData())));
         xml.FindElem("Item");income.setItem(xml.GetData());
-        xml.FindElem("Amount");income.setAmount(AuxilaryMethods::conversionStringToInt(xml.GetData()));
+        xml.FindElem("Amount");income.setAmount(AuxilaryMethods::conversionToAmountWithPointer(xml.GetData()));
         if(UserFromXmlId==LoggedUserId)incomes.push_back(income);
         xml.OutOfElem();
     }

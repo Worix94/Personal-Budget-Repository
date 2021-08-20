@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <string>
 
 #include "Income.h"
 #include "Encome.h"
@@ -24,6 +25,7 @@ IncomesEncomesManager(string fileWithIncomesName,string fileWithEncomesName,int 
 {
 incomes=fileWithIncomes.loadingIncomesOfLoggedUser(LOGGED_USER_ID);
 encomes=fileWithEncomes.loadingEncomesOfLoggedUser(LOGGED_USER_ID);
+std::cout.precision(10+2);
 };
 void showBalanceOfCurrentMonth();
 void showBalanceOfPreviousMonth();
