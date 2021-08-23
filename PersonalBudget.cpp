@@ -35,9 +35,9 @@ void PersonalBudget::displayBalanceOfCurrentMonth()
     incomesEncomesManager -> displayBalanceOfCurrentMonth();
 }
 
-void PersonalBudget::addEncome()
+void PersonalBudget::addExpense()
 {
-    incomesEncomesManager -> addEncome();
+    incomesEncomesManager -> addExpense();
 }
 
 void PersonalBudget::displayBalanceOfLastMonth()

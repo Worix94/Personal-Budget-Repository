@@ -25,7 +25,7 @@ public:
     void userLogOut();
     void addIncome();
     void displayBalanceOfCurrentMonth();
-    void addEncome();
+    void addExpense();
     void displayBalanceOfLastMonth();
     void displayBalanceOfSelectedPeriod();
     void changePasswordOfLoggedUser();
