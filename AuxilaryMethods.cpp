@@ -49,7 +49,7 @@ char AuxilaryMethods::selectOptionFromUserMenu() {
     cout << " >>> USER MENU <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Add income" << endl;
-    cout << "2. Add encome" << endl;
+    cout << "2. Add expense" << endl;
     cout << "3. Balance sheet for the current month" << endl;
     cout << "4. Balance sheet for the last month" << endl;
     cout << "5. Balance sheet for the choosen month" << endl;

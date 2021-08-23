@@ -40,11 +40,11 @@ string IncomesEncomesManager::getNewIncomeData(Income &income) {
     return date;
 }
 
-string IncomesEncomesManager::getNewEncomeData(Encome &encome) {
+string IncomesEncomesManager::getNewExpenseData(Expense &expense) {
     string date;
     char sign;
-    encome.setEncomeId(1);
-    encome.setUserId(LOGGED_USER_ID);
+    expense.setExpenseId(1);
+    expense.setUserId(LOGGED_USER_ID);
     while(true) {
         cout<<"1.Use today's date. "<<endl;
         cout<<"2.Choose other's date. "<<endl;
@@ -68,12 +68,12 @@ string IncomesEncomesManager::getNewEncomeData(Encome &encome) {
         }
     }
     cout<<"Enter item name: ";
-    encome.setItem(AuxilaryMethods::loadLine());
+    expense.setItem(AuxilaryMethods::loadLine());
     cout<<"Enter amount:";
 
-    encome.setAmount(AuxilaryMethods::conversionToAmountWithPointer(AuxilaryMethods::loadLine()));
+    expense.setAmount(AuxilaryMethods::conversionToAmountWithPointer(AuxilaryMethods::loadLine()));
 
-    fileWithEncomes.writeEncomeToFile(encome,date);
+    fileWithExpesnes.writeExpenseToFile(expense,date);
 
     return date;
 }
@@ -99,24 +99,24 @@ void IncomesEncomesManager::displayIncome(Income &income) {
     cout<<"Amount: "<<income.getAmount()<<endl;
 }
 
-void IncomesEncomesManager::displayEncome(Encome &encome) {
+void IncomesEncomesManager::displayEncome(Expense &expense) {
     //cout<<"Encome Id: "<<encome.getEncomeId()<<"  ";
-    cout<<"Date of encome: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(encome.getDate()))<<"  ";
-    cout<<"Encome name: "<<encome.getItem()<<"  ";
-    cout<<"Amount: "<<encome.getAmount()<<endl;
+    cout<<"Date of expense: "<<AuxilaryMethods::convertDateToDateWithDashes(AuxilaryMethods::conversionIntToString(expense.getDate()))<<"  ";
+    cout<<"Encome name: "<<expense.getItem()<<"  ";
+    cout<<"Amount: "<<expense.getAmount()<<endl;
 }
 
-void IncomesEncomesManager::addEncome() {
-    Encome encome;
+void IncomesEncomesManager::addExpense() {
+    Expense expense;
     system("cls");
     string date;
-    cout << " >>> NEW INCOME ADDING <<<" << endl << endl;
-    date=getNewEncomeData(encome);
+    cout << " >>> NEW EXPENSE ADDING <<<" << endl << endl;
+    date=getNewExpenseData(expense);
     date=AuxilaryMethods::convertDateWithDashes(date);
-    encome.setDate(AuxilaryMethods::conversionStringToInt(date));
-    encomes.push_back(encome);
+    expense.setDate(AuxilaryMethods::conversionStringToInt(date));
+    expenses.push_back(expense);
 
-    cout<<"New encome added"<<endl;
+    cout<<"New expense added"<<endl;
     Sleep(1500);
 }
 
@@ -198,13 +198,13 @@ void IncomesEncomesManager::displayBalanceOfCurrentMonth() {
         }
     }
     cout<<"-------------------------------------"<<endl;
-    cout<<"ENCOMES:"<<endl;
-    std::sort(encomes.begin(),encomes.end());
-    for(int i=0; i<encomes.size(); i++) {
-        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+    cout<<"EXPENSES:"<<endl;
+    std::sort(expenses.begin(),expenses.end());
+    for(int i=0; i<expenses.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(expenses[i].getDate());
         if(isDateInCurrentMonth(date)) {
-            displayEncome(encomes[i]);
-            totalEncomes+=AuxilaryMethods::conversionStringToDouble(encomes[i].getAmount());
+            displayEncome(expenses[i]);
+            totalEncomes+=AuxilaryMethods::conversionStringToDouble(expenses[i].getAmount());
         }
     }
     cout<<"-------------------------------------"<<endl;
@@ -230,13 +230,13 @@ void IncomesEncomesManager::displayBalanceOfLastMonth() {
         }
     }
     cout<<"-------------------------------------"<<endl;
-    cout<<"ENCOMES:"<<endl;
-    std::sort(encomes.begin(),encomes.end());
-    for(int i=0; i<encomes.size(); i++) {
-        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+    cout<<"EXPENSES:"<<endl;
+    std::sort(expenses.begin(),expenses.end());
+    for(int i=0; i<expenses.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(expenses[i].getDate());
         if(isDateInLastMonth(date)) {
-            displayEncome(encomes[i]);
-            totalEncomes+=AuxilaryMethods::conversionStringToDouble(encomes[i].getAmount());
+            displayEncome(expenses[i]);
+            totalEncomes+=AuxilaryMethods::conversionStringToDouble(expenses[i].getAmount());
         }
     }
     cout<<"-------------------------------------"<<endl;
@@ -281,13 +281,13 @@ void IncomesEncomesManager::displayBalanceOfSelectedPeriod() {
         }
     }
     cout<<"-------------------------------------"<<endl;
-    cout<<"ENCOMES:"<<endl;
-    std::sort(encomes.begin(),encomes.end());
-    for(int i=0; i<encomes.size(); i++) {
-        string date=AuxilaryMethods::conversionIntToString(encomes[i].getDate());
+    cout<<"EXPENSES:"<<endl;
+    std::sort(expenses.begin(),expenses.end());
+    for(int i=0; i<expenses.size(); i++) {
+        string date=AuxilaryMethods::conversionIntToString(expenses[i].getDate());
         if(isDateInChosenPeriod(startingDate,endingDate,date)) {
-            displayEncome(encomes[i]);
-            totalEncomes+=AuxilaryMethods::conversionStringToDouble(encomes[i].getAmount());
+            displayEncome(expenses[i]);
+            totalEncomes+=AuxilaryMethods::conversionStringToDouble(expenses[i].getAmount());
         }
     }
     cout<<"-------------------------------------"<<endl;

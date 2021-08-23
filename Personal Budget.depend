@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1629382680 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
+1629718567 source:c:\users\worix94\desktop\programy\personal budget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 
@@ -17,7 +17,7 @@
 	<string>
 	<afx.h>
 
-1629382680 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
+1629718567 source:c:\users\worix94\desktop\programy\personal budget\personalbudget.cpp
 	"PersonalBudget.h"
 
 1627991220 source:c:\users\worix94\desktop\programy\personal budget\user.cpp
@@ -58,7 +58,7 @@
 	"AuxilaryMethods.h"
 	"FileWithUsers.h"
 
-1629382680 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
+1629718567 c:\users\worix94\desktop\programy\personal budget\personalbudget.h
 	<iostream>
 	"UserManager.h"
 	"IncomesEncomesManager.h"
@@ -66,7 +66,7 @@
 1629457082 source:c:\users\worix94\desktop\programy\personal budget\encome.cpp
 	"Encome.h"
 
-1629457082 source:c:\users\worix94\desktop\programy\personal budget\filewithencomes.cpp
+1629718160 source:c:\users\worix94\desktop\programy\personal budget\filewithencomes.cpp
 	"FileWithEncomes.h"
 
 1629457082 source:c:\users\worix94\desktop\programy\personal budget\filewithincomes.cpp
@@ -75,7 +75,7 @@
 1629457082 source:c:\users\worix94\desktop\programy\personal budget\income.cpp
 	"Income.h"
 
-1629457082 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
+1629718547 source:c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.cpp
 	"IncomesEncomesManager.h"
 
 1628684857 source:c:\users\worix94\desktop\programy\personal budget\date.cpp
@@ -90,17 +90,17 @@
 1629457082 c:\users\worix94\desktop\programy\personal budget\encome.h
 	<iostream>
 
-1629457082 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
+1629718750 c:\users\worix94\desktop\programy\personal budget\incomesencomesmanager.h
 	<iostream>
 	<algorithm>
 	<vector>
 	<string>
 	"Income.h"
-	"Encome.h"
+	"Expense.h"
 	"UserManager.h"
 	"FileWithIncomes.h"
 	"AuxilaryMethods.h"
-	"FileWithEncomes.h"
+	"FileWithExpenses.h"
 
 1629457082 c:\users\worix94\desktop\programy\personal budget\filewithincomes.h
 	<iostream>
@@ -110,12 +110,12 @@
 	"Income.h"
 	"XmlFileWith.h"
 
-1629457082 c:\users\worix94\desktop\programy\personal budget\filewithencomes.h
+1629718246 c:\users\worix94\desktop\programy\personal budget\filewithencomes.h
 	<iostream>
 	<vector>
 	"Markup.h"
 	"AuxilaryMethods.h"
-	"Encome.h"
+	"Expense.h"
 	"XmlFileWith.h"
 
 1629457082 c:\users\worix94\desktop\programy\personal budget\xmlfilewith.h
@@ -124,4 +124,21 @@
 
 1629457082 source:c:\users\worix94\desktop\programy\personal budget\xmlfilewith.cpp
 	"XmlFileWith.h"
+
+1629717916 c:\users\worix94\desktop\programy\personal budget\expense.h
+	<iostream>
+
+1629717916 source:c:\users\worix94\desktop\programy\personal budget\expense.cpp
+	"Expense.h"
+
+1629718430 c:\users\worix94\desktop\programy\personal budget\filewithexpenses.h
+	<iostream>
+	<vector>
+	"Markup.h"
+	"AuxilaryMethods.h"
+	"Expense.h"
+	"XmlFileWith.h"
+
+1629718430 source:c:\users\worix94\desktop\programy\personal budget\filewithexpenses.cpp
+	"FileWithExpenses.h"
 

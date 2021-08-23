@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     char choice;
-    PersonalBudget personalBudget("users.xml","incomes.xml","encomes.xml");
+    PersonalBudget personalBudget("users.xml","incomes.xml","exepenses.xml");
     while (true)
     {
     if(personalBudget.getLoggedUserId()==0){
@@ -39,7 +39,7 @@ int main()
                 personalBudget.addIncome();
                 break;
             case '2':
-                personalBudget.addEncome();
+                personalBudget.addExpense();
                 break;
             case '3':
                 personalBudget.displayBalanceOfCurrentMonth();
